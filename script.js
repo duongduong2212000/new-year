@@ -5,6 +5,7 @@ const sfxNext = document.getElementById("sfxNext");
 const lion = document.getElementById("lion");
 const resultBox = document.getElementById("result");
 
+// Prize table with probabilities
 const prizes = [
     { prize: 2500, chance: 5 },
     { prize: 1000, chance: 10 },
@@ -26,6 +27,8 @@ function randomPrize() {
 
 document.querySelectorAll(".bag").forEach(bag => {
     bag.addEventListener("click", () => {
+
+        // Hide lion
         lion.style.display = "none";
 
         let prize = randomPrize();
@@ -34,12 +37,13 @@ document.querySelectorAll(".bag").forEach(bag => {
             resultBox.innerHTML = "Next time!";
             sfxNext.play();
         } else {
-            resultBox.innerHTML = `You won ₦${prize}!`;
+            resultBox.innerHTML = `🎉 You won ₦${prize}! 🎉`;
             sfx2500.play();
             startFireworks();
         }
 
-        bag.style.transform = "scale(1.5)";
+        // Zoom selected bag
+        bag.style.transform = "scale(1.55)";
     });
 });
 
@@ -62,13 +66,13 @@ function startFireworks() {
 
     let particles = [];
 
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 120; i++) {
         particles.push({
             x: innerWidth / 2,
             y: innerHeight / 2,
-            speedX: (Math.random() - 0.5) * 8,
-            speedY: (Math.random() - 0.5) * 8,
-            life: 80
+            speedX: (Math.random() - 0.5) * 9,
+            speedY: (Math.random() - 0.5) * 9,
+            life: 85
         });
     }
 
@@ -80,7 +84,7 @@ function startFireworks() {
             p.y += p.speedY;
             p.life--;
 
-            ctx.fillStyle = "rgba(255,255,0," + p.life / 80 + ")";
+            ctx.fillStyle = "rgba(255,215,0," + p.life / 85 + ")";
             ctx.beginPath();
             ctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
             ctx.fill();
