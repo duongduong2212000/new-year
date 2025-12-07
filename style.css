@@ -2,6 +2,7 @@ body {
     margin: 0;
     background: url("assets/background.jpg");
     background-size: cover;
+    background-position: center;
     font-family: Arial, sans-serif;
     text-align: center;
     color: white;
@@ -11,11 +12,11 @@ body {
     font-size: 48px;
     color: gold;
     margin-top: 20px;
-    text-shadow: 0 0 15px gold;
+    text-shadow: 0 0 18px gold;
 }
 
 .lion {
-    width: 250px;
+    width: 260px;
     margin-top: 20px;
 }
 
@@ -32,33 +33,35 @@ body {
     margin: 10px;
     padding: 12px 25px;
     font-size: 18px;
-    border-radius: 8px;
+    border-radius: 9px;
+    border: none;
+    cursor: pointer;
 }
 
 .bags {
-    margin-top: 25px;
+    margin-top: 30px;
 }
 
 .bag {
-    width: 120px;
+    width: 130px;
     margin: 10px;
     cursor: pointer;
     transition: transform .2s;
 }
 
 .bag:hover {
-    transform: scale(1.2);
+    transform: scale(1.18);
 }
 
 .result {
     margin-top: 20px;
-    font-size: 26px;
+    font-size: 28px;
     color: red;
     font-weight: bold;
 }
 
 #fireworksCanvas {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
